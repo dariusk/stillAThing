@@ -36,6 +36,5 @@ var sharing = {
     var results = regex.exec( window.location.href ); 
      if( results == null )    return "";  
      else    return results[1];
-     }
   }
 };
