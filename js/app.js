@@ -9,10 +9,12 @@ Array.prototype.pick = function() {
 function generate(nounPlural, verb) {
   nounPlural = nounPlural || nouns.pick().pluralize();
   verb = verb || verbs.pick();
+  var d = new Date();
+  var year = d.getFullYear();
   var generatedText = [
-    'It\'s 2013. Why are ' + nounPlural + ' still a thing?',
-    'I can\'t believe it\'s 2013 and we\'re still talking about ' + nounPlural,
-    nounPlural.humanize() + '? Seriously? It\'s 2013, people.'
+    'It\'s ' + year + '. Why are ' + nounPlural + ' still a thing?',
+    'I can\'t believe it\'s ' + year + ' and we\'re still talking about ' + nounPlural,
+    nounPlural.humanize() + '? Seriously? It\'s ' + year + ', people.'
     ].pick();
   $('#content').text(generatedText);
   var shareUrl = window.location.href.split('?')[0]+'?word='+sharing.encodeStr(verb)+'$'+sharing.encodeStr(nounPlural);
